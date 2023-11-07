@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de FGTS</title>
+
+    <style>
+        * {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        header {
+            display: flex;
+            justify-content: center;
+        }
+
+        h1 {
+            margin-bottom: 4px;
+        }
+
+        #inputs-content,
+        #resultado-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: 0 auto;
+            width: 400px;
+        }
+
+        #resultado-content {
+            font-weight: bold;
+            font-size: larger;
+        }
+
+        #resultado-mes,
+        #resultado-ano {
+            width: 400px;
+            height: 40px;
+            padding-top: 10px;
+            border-radius: 80px;
+        }
+
+        input {
+            margin: 10px;
+            height: 30px;
+            border: 3px solid #c3ccd4;
+            border-radius: 4px;
+        }
+
+        ::placeholder {
+            color: #c2ced8;
+            padding-left: 5px;
+        }
+
+        button {
+            width: fit-content;
+            padding: 7px 15px;
+            margin: 0 auto;
+            background-color: #6558f5;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:disabled {
+            background-color: #636081;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Cálculo de FGTS</h1>
+    </header>
+
+    <main id="main-content">
+        <div id="inputs-content">
+            <input type="number" name="salario" id="salario" placeholder="Salário Bruto" step="500" required>
+            <button type="button" id="calcularButton" onclick="calcularFgtsBotao()" disabled>Calcular</button>
+        </div>
+
+        <div id="resultado-content" style="display: none; gap: 24px">
+            <div style="display: flex; flex-direction: column; justify-content: center; gap: 15px">
+                <span id="resultado-mes" style="text-align: center;"></span>
+                <span id="resultado-ano" style="text-align: center;"></span>
+            </div>
+            <button type="button" id="calcularNovamente" onclick="calcularNovamente()">Calcular Novamente</button>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

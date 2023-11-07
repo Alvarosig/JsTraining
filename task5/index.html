@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitação de Férias</title>
+
+    <style>
+        * {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        main,
+        #gerarButton {
+            margin-top: 24px;
+        }
+
+        #inputs-content,
+        #resultado-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: 0 auto;
+            width: 408px;
+        }
+
+        #resultado-content {
+            font-size: larger;
+        }
+
+        label {
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        input {
+            margin-bottom: 4px;
+            padding: 10px;
+            border: 2px solid #c3ccd4;
+            border-radius: 4px;
+        }
+
+        #data {
+            width: 100% !important;
+        }
+
+        #horas {
+            width: 100% !important;
+        }
+
+        #inputs-content>input {
+            width: 100%;
+        }
+
+        #inputs-content>input[data] {
+            width: 50% !important;
+        }
+
+        ::placeholder {
+            color: #c2ced8;
+            padding-left: 5px;
+        }
+
+        button {
+            width: fit-content;
+            padding: 8px 20px;
+            margin: 0 auto;
+            background-color: #6558f5;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:disabled {
+            background-color: #636081;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+
+<body>
+
+    <main id="main-content">
+        <div id="inputs-content">
+            <label for="nome">Nome do convidado</label>
+            <input type="text" name="nome" id="nome" placeholder="Douglas Calvalcante">
+            <div id="noivo-content" style="display: flex; gap: 20px;">
+                <div>
+                    <label for="noivo">Nome do noivo (a)</label>
+                    <input type="text" name="noivo" id="noivo">
+                </div>
+                <div>
+                    <label for="noiva">Nome da noiva (o)</label>
+                    <input type="text" name="noiva" id="noiva">
+                </div>
+            </div>
+            <div class="data-casamento" style="display: flex; gap: 60px;">
+                <div>
+                    <label for="data">Data do casamento</label>
+                    <input type="date" name="data" id="data">
+                </div>
+                <div class="div">
+                    <label for="horas">Horas do casamento</label>
+                    <input type="number" name="horas" id="horas" min="1" max="31" step="1">
+                </div>
+            </div>
+            <button type="button" id="gerarButton" onclick="gerarCartaBotao()" disabled>Gerar convite</button>
+        </div>
+
+        <div id="resultado-content" style="display: none;">
+            <div id="carta-content">
+            </div>
+            <button type="button" id="gerarNovamente" onclick="gerarNovamente()">Gerar outro convite</button>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
