@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✎ Lista de Afazeres ✅</title>
+    <style>
+        #tarefa {
+            margin-bottom: 20px;
+        }
+
+        .tarefas-box {
+            width: 50%;
+            display: flex;
+            flex-wrap: nowrap;
+        }
+
+        .tarefas-box>label>button {
+            margin-left: 16px;
+        }
+
+        #input-show {
+            display: none;
+        }
+
+        .tarefas-box>label>button {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Lista de Afazeres</h1>
+
+    <input type="text" name="tarefa" id="tarefa">
+    <button onclick="adicionarTarefa()">Adicionar</button>
+
+    <div id="input-show"></div>
+    <button id="apagar-selecionadas" onclick="apagarTarefasSelecionadas()" style="display: none;">Apagar tarefas
+        selecionadas</button>
+    <script src="app.js"></script>
+</body>
+
+</html>
