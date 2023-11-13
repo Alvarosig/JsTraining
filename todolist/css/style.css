@@ -61,6 +61,7 @@ main {
     width: 100%;
     box-shadow: 0 0 20px #ccc;
     margin-bottom: 2%;
+    border-radius: 10px;
 }
 
 .item.clicado {
@@ -99,6 +100,8 @@ main {
     height: 80px;
     width: 100%;
     cursor: pointer;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 .material-symbols-outlined.task-alt-icon {
