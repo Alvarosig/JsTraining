@@ -27,16 +27,16 @@ function addTarefa() {
         contador++;
 
         let novoItem = `<div id="${contador}" class="item">
-        <div class="item-icone">
-            <span class="material-symbols-outlined">
+        <div onclick="marcar(${contador})" class="item-icone">
+            <span id="icone_${contador}" class="material-symbols-outlined">
                 circle
             </span>
         </div>
-        <div class="item-nome">
+        <div onclick="marcar(${contador})" class="item-nome">
             ${valorInput}
         </div>
         <div class="item-botao">
-            <button class="delete">
+            <button onclick="delTarefa(${contador})" class="delete">
                 <span class="material-symbols-outlined">
                     delete
                 </span>
@@ -55,7 +55,37 @@ function addTarefa() {
     }
 }
 
-function delTarefa() {
+function delTarefa(id) {
+    
+    let tarefa = document.getElementById(id);
+    tarefa.remove()
 
+}
 
+function marcar(id) {
+
+    let item = document.getElementById(id);
+    let classe = item.getAttribute('class');
+
+    if(classe == 'item') {
+        
+        item.classList.add('clicado');
+        let icone = document.getElementById('icone_' + id);
+        icone.classList.remove('material-symbols-outlined'); 
+        icone.classList.remove('circle'); 
+        icone.classList.add('material-symbols-outlined');
+        icone.classList.add('task-alt-icon');
+
+        item.parentNode.appendChild(item);
+
+    } else {
+        
+        item.classList.remove('clicado');
+        let icone = document.getElementById('icone_' + id);
+        icone.classList.add('material-symbols-outlined'); 
+        icone.classList.add('circle'); 
+        icone.classList.remove('material-symbols-outlined');
+        icone.classList.remove('task-alt-icon');
+
+    }
 }
