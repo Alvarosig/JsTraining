@@ -75,6 +75,7 @@ function marcar(id) {
         icone.classList.remove('circle'); 
         icone.classList.add('material-symbols-outlined');
         icone.classList.add('task-alt-icon');
+        icone.textContent = 'task_alt';
 
         item.parentNode.appendChild(item);
 
@@ -82,10 +83,11 @@ function marcar(id) {
         
         item.classList.remove('clicado');
         let icone = document.getElementById('icone_' + id);
-        icone.classList.add('material-symbols-outlined'); 
-        icone.classList.add('circle'); 
         icone.classList.remove('material-symbols-outlined');
         icone.classList.remove('task-alt-icon');
+        icone.classList.add('material-symbols-outlined'); 
+        icone.classList.add('circle'); 
+        icone.textContent = 'circle';
 
     }
 }
