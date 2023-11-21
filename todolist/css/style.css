@@ -47,7 +47,6 @@ main {
     flex-wrap: wrap;
     width: 90%;
     margin: auto;
-    border: 1px solid blue;
     padding-top: 40px;
 }
 
